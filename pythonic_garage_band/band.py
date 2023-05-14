@@ -7,10 +7,16 @@ class Band:
         Band.instances.append(self)
         
     def __str__(self):
-        pass
+        band_str = "this is {} band and the member are :\n".format(self.name)
+        for musician in self.members:
+            band_str+=str(musician)+"\n"
+        return band_str
 
     def __repr__(self):
-        pass
+        band_instance = "band instance. Name = {}\nand the member instance are :\n".format(self.name)
+        for musician in self.members:
+            band_instance+=repr(musician)+"\n"
+        return band_instance
 
     def play_solos(self):
         return [musician.play_solo() for musician in self.members]
@@ -91,3 +97,15 @@ class Drummer(Musician):
     
     def play_solo(self):
         return "rattle boom crash"
+    
+if __name__ == "__main__":
+    members = [
+    Guitarist("Kurt Cobain"),
+    Bassist("Krist Novoselic"),
+    Drummer("Dave Grohl"),
+]
+
+    some_band = Band("Nirvana", members)
+
+    print(str(some_band))
+    print(repr(some_band))
