@@ -1,5 +1,15 @@
 class Band:
+    """
+    this class is a band class it contain all type of Musician class and call for the funcion i provided to it 
+    ex:
+    str(band): will print a string with the str for all type of Musician class int this class
+    repr(band): will print a repr with the repr for all type of Musician class int this class
+    play_solos: will return the outcomes of play_solo for every member in this band
+    to_list: will return all the instances of class band
+    """
+
     instances = []
+
 
     def __init__(self,name,members):
         self.name = name
@@ -26,6 +36,12 @@ class Band:
         return cls.instances
 
 class Musician:
+    """
+    this class is a Musician class it contain name and call for the funcion i provided to it and it is the superclass for Guitarist,Bassist,Drummer
+    ex:
+    str(band): will print a string that contain the name of the Musician
+    repr(band): will print a string that contain the name of the Musician
+    """
     def __init__(self,name):
         self.name = name
     
@@ -38,7 +54,14 @@ class Musician:
 
 
 class Guitarist(Musician):
-
+    """
+    this class is a Guitarist class and it is a child for Musician it contain instrument and call for the funcion i provided to it
+    ex:
+    str(band): will print a string that contain the name of the Musician and what instrument he/she play
+    repr(band): will print a string that contain the name of the Musician and from what class he/she is made of.
+    get_instrument: just return instrument
+    play_solo: return a string 
+    """
     def __init__(self, name):
         super().__init__(name)
         self.instrument = "guitar"
@@ -59,7 +82,14 @@ class Guitarist(Musician):
 
 
 class Bassist(Musician):
-
+    """
+    this class is a Bassist class and it is a child for Musician it contain instrument and call for the funcion i provided to it
+    ex:
+    str(band): will print a string that contain the name of the Musician and what instrument he/she play
+    repr(band): will print a string that contain the name of the Musician and from what class he/she is made of.
+    get_instrument: just return instrument
+    play_solo: return a string 
+    """
     def __init__(self, name):
         super().__init__(name)
         self.instrument = "bass"
@@ -79,6 +109,14 @@ class Bassist(Musician):
         return "bom bom buh bom"
 
 class Drummer(Musician):
+    """
+    this class is a Drummer class and it is a child for Musician it contain instrument and call for the funcion i provided to it
+    ex:
+    str(band): will print a string that contain the name of the Musician and what instrument he/she play
+    repr(band): will print a string that contain the name of the Musician and from what class he/she is made of.
+    get_instrument: just return instrument
+    play_solo: return a string 
+    """
 
     def __init__(self, name):
         super().__init__(name)
